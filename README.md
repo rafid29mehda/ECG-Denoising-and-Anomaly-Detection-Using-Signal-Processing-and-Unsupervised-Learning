@@ -43,3 +43,13 @@ The project follows a six-step pipeline, implemented in Python and optimized for
   - Adds synthetic anomalies by perturbing 5% of samples with Gaussian noise (mean=0, std=0.5).
   - Creates binary labels (0: normal, 1: anomaly) for evaluation (not used in training).
   - Prints the shapes of the ECG signal and labels, and the anomaly distribution.
+
+- **Rationale**: Synthetic anomalies mimic irregular heartbeats or artifacts, enabling testing of the anomaly detection pipeline.
+
+### Step 3: Preprocess ECG (`preprocess_ecg`)
+- **Purpose**: Removes baseline wander and segments the ECG signal into overlapping windows.
+- **Function**: `preprocess_ecg(ecg_signal, sampling_rate=360, window_size=3600)`
+- Removes baseline wander using 5th-degree polynomial fitting to model low-frequency drift.
+- Segments the ECG into 10-second windows (3600 samples at 360 Hz) with 50% overlap (step size: `window_size // 2`) to capture temporal dynamics.
+- Returns an array of segments and the baseline-corrected ECG signal.
+  
