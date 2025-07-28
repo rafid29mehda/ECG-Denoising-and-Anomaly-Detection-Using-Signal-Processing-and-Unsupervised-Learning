@@ -52,4 +52,13 @@ The project follows a six-step pipeline, implemented in Python and optimized for
 - Removes baseline wander using 5th-degree polynomial fitting to model low-frequency drift.
 - Segments the ECG into 10-second windows (3600 samples at 360 Hz) with 50% overlap (step size: `window_size // 2`) to capture temporal dynamics.
 - Returns an array of segments and the baseline-corrected ECG signal.
-  
+
+- **Rationale**: Baseline wander removal is critical for ECG preprocessing, and overlapping windows ensure robust feature extraction.
+
+### Step 4: Denoise ECG (`denoise_ecg`)
+- **Purpose**: Applies wavelet denoising to remove high-frequency noise from ECG segments.
+- **Function**: `denoise_ecg(segments, wavelet='db6', level=4)`
+- Uses `pywt.wavedec` with the Daubechies 6 (`db6`) wavelet and 4 decomposition levels.
+- Applies soft thresholding to high-frequency coefficients based on the universal threshold (`σ * sqrt(2 * log(N))`).
+- Reconstructs denoised segments using `pywt.waverec`, ensuring output length matches input.
+- Returns an array of denoised segments.
