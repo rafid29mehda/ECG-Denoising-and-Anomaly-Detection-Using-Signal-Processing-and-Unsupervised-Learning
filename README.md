@@ -73,3 +73,16 @@ The project follows a six-step pipeline, implemented in Python and optimized for
 - Trains an Isolation Forest model with a contamination rate of 5% to detect anomalies.
 - Converts model predictions (-1: anomaly, 1: normal) to binary labels (1: anomaly, 0: normal).
 - Prints the anomaly distribution.
+
+- **Rationale**: Isolation Forest is efficient for unsupervised anomaly detection, suitable for wearable devices with limited labeled data.
+
+### Step 6: Visualize and Save Results (`visualize_and_save`)
+- **Purpose**: Visualizes the denoised ECG signal with detected anomalies and saves results.
+- **Function**: `visualize_and_save(ecg_no_baseline, anomaly_labels, features, segments)`
+- Reconstructs a full anomaly signal by marking windows with detected anomalies.
+- Plots the denoised ECG with red markers for anomaly regions.
+- Saves the plot as `results/anomaly_plot.png`.
+- Saves anomaly labels to `results/anomaly_scores.txt`.
+- Downloads files in Colab using `files.download`.
+
+- **Rationale**: Visualization aids interpretation, and saved files ensure reproducibility.
