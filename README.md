@@ -62,3 +62,14 @@ The project follows a six-step pipeline, implemented in Python and optimized for
 - Applies soft thresholding to high-frequency coefficients based on the universal threshold (`σ * sqrt(2 * log(N))`).
 - Reconstructs denoised segments using `pywt.waverec`, ensuring output length matches input.
 - Returns an array of denoised segments.
+
+- **Rationale**: Wavelet denoising effectively removes noise while preserving ECG morphology, critical for accurate anomaly detection.
+
+### Step 5: Detect Anomalies (`detect_anomalies`)
+- **Purpose**: Identifies anomalies in ECG segments using an Isolation Forest algorithm.
+- **Function**: `detect_anomalies(denoised_segments, contamination=0.05)`
+- Extracts simple statistical features (mean, standard deviation, max, min) from each segment.
+- Normalizes features using `StandardScaler`.
+- Trains an Isolation Forest model with a contamination rate of 5% to detect anomalies.
+- Converts model predictions (-1: anomaly, 1: normal) to binary labels (1: anomaly, 0: normal).
+- Prints the anomaly distribution.
