@@ -22,7 +22,7 @@ This project implements an end-to-end pipeline for preprocessing electrocardiogr
 - **Rationale**: Synthetic data ensures accessibility and reproducibility, allowing the pipeline to be tested without restricted datasets (e.g., MIT-BIH). The pipeline is extensible to real ECG data.
 
 ## Methodology
-The project follows a six-step pipeline, implemented in Python and optimized for Google Colab. Each step is encapsulated in a modular function, stored in a separate `.py` file within the `src/` folder.
+The project follows a six-step pipeline, implemented in Python and optimized for Google Colab. Each step is encapsulated in a modular function, stored in a separate `.py` file within the `src/` folder. 
 
 ### Step 1: Install Dependencies
 - **Purpose**: Sets up the Python environment with required libraries.
