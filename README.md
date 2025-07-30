@@ -1,7 +1,7 @@
 # ECG Denoising and Anomaly Detection Using Unsupervised Learning
 
 ## Project Overview
-This project implements an end-to-end pipeline for preprocessing electrocardiogram (ECG) signals and detecting anomalies (e.g., irregular heartbeats or artifacts) using advanced signal processing and unsupervised learning. Designed for wearable health monitoring systems, the pipeline emphasizes ECG denoising (baseline wander removal and wavelet denoising) and anomaly detection with an Isolation Forest algorithm. This project showcases advanced ECG preprocessing skills, complementing other portfolio projects (e.g., ECG arrhythmia classification and HRV stress detection) by focusing on unsupervised methods and signal cleaning, strengthening the author’s PhD profile in Biomedical Signal Processing.
+This project implements an end-to-end pipeline for preprocessing electrocardiogram (ECG) signals and detecting anomalies (e.g., irregular heartbeats or artifacts) using advanced signal processing and unsupervised learning. Designed for wearable health monitoring systems, the pipeline emphasizes ECG denoising (baseline wander removal and wavelet denoising) and anomaly detection with an Isolation Forest algorithm. 
 
 ## Objectives
 - Generate synthetic ECG data with simulated noise and anomalies to mimic real-world wearable device signals.
@@ -9,7 +9,7 @@ This project implements an end-to-end pipeline for preprocessing electrocardiogr
 - Apply wavelet-based denoising to eliminate high-frequency noise.
 - Detect anomalies using unsupervised learning (Isolation Forest).
 - Visualize results and save outputs for reproducibility.
-- Organize the codebase in a modular, professional structure for GitHub.
+
 
 ## Dataset
 - **Source**: Synthetic ECG data generated using the `neurokit2` library.
