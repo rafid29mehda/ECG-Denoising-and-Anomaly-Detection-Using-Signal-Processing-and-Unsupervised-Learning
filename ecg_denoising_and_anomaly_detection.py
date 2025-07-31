@@ -133,4 +133,3 @@ def visualize_and_save(ecg_no_baseline, anomaly_labels, features, segments):
     files.download('anomaly_plot.png')
     files.download('anomaly_scores.txt')
 
-visualize_and_save(ecg_no_baseline, anomaly_labels, features, segments)
